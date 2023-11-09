@@ -42,13 +42,6 @@ function App() {
                 mode={mode}
                 setMode={setMode}
             />
-
-            <div>
-                <h1>Your Posts</h1>
-                <h1>{post_data.length} hello</h1>
-            </div>
-
-
         </>
     );
 }
