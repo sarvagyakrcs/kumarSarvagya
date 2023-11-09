@@ -36,6 +36,8 @@ let post_data = [
     }
 ]
 
+let newPosts = [];
+
 export async function fetchData() {
     try {
         const response = await axios.get(apiUrl, {
@@ -45,8 +47,12 @@ export async function fetchData() {
         });
 
         // Successful request (status codes 2xx)
-        const newPosts = response.data
-        console.log('New posts:', newPosts);
+        newPosts = response.data
+        // console.log('New posts:', newPosts);
+        // console.log({'Type of post_Data' : typeof(post_data)});
+        // console.log({'post_Data' : post_data});
+        // console.log({'Type of newPosts' : typeof(newPosts)});
+        // console.log({'newPosts' : newPosts});
 
         // Add new posts to post_data and maintain only the last 10
         post_data = post_data.concat(newPosts);
@@ -54,6 +60,8 @@ export async function fetchData() {
             post_data = post_data.slice(post_data.length - 10);
         }
         console.log('Last 10 posts:', post_data);
+
+        console.log({'post_Data final' : post_data});
     } catch (error) {
         console.error('Error occurred:', error);
         if (error.response) {
@@ -104,4 +112,4 @@ const jumbotronAnimatedText = {
     'thirdSentence': 'I am Vengence⚔️'
 }
 
-export { socialMediaLinks, contactDetails, post_data, jumbotronAnimatedText };
+export { socialMediaLinks, contactDetails, post_data, jumbotronAnimatedText, newPosts };

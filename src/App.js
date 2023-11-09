@@ -4,7 +4,7 @@ import NavBar from './components/navBar/navbar';
 import Footer from './components/footer/footer';
 import Jumbotron from './components/jumbotron/jumbotron';
 // data
-import { socialMediaLinks, contactDetails, jumbotronAnimatedText, post_data } from './data'
+import { socialMediaLinks, contactDetails, jumbotronAnimatedText, post_data, newPosts } from './data'
 // css
 import './input.css';
 // packages
