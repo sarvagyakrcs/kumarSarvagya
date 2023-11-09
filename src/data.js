@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://sarvagyakumarcd22.pythonanywhere.com/posts';
+const apiUrl = 'https://sarvagyakumarcd22.pythonanywhere.com/posts';
 const accessToken = '987677ba11d78e59ebc24dfe48b256016d4ceb9c';
 
 let post_data = []; // Define post_data variable here
