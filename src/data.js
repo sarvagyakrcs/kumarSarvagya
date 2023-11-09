@@ -3,7 +3,38 @@ import axios from 'axios';
 const apiUrl = 'https://sarvagyakumarcd22.pythonanywhere.com/posts';
 const accessToken = '987677ba11d78e59ebc24dfe48b256016d4ceb9c';
 
-let post_data = []; // Define post_data variable here
+let post_data = [
+    {
+        "id": 10000000,
+        "title": "The Rise of Artificial Intelligence",
+        "content": "Artificial intelligence continues to transform industries, revolutionizing the way we live and work. Its applications in healthcare, finance, and automation are reshaping the future.",
+        "date": "2023-11-09T04:35:31.583009Z"
+    },
+    {
+        "id": 20000000,
+        "title": "Blockchain: Beyond Cryptocurrency",
+        "content": "While initially known for cryptocurrencies, blockchain's potential reaches far beyond. Its decentralized nature has implications in supply chain management, voting systems, and more.",
+        "date": "2023-11-09T04:38:31.003298Z"
+    },
+    {
+        "id": 30000000,
+        "title": "Quantum Computing: The Next Frontier",
+        "content": "Quantum computing promises unprecedented computational power, potentially solving complex problems that classical computers struggle with, revolutionizing encryption and scientific simulations.",
+        "date": "2023-11-09T14:01:19.612363Z"
+    },
+    {
+        "id": 40000000,
+        "title": "Cybersecurity in an Interconnected World",
+        "content": "With the growing interconnectivity, cybersecurity becomes pivotal. Advancements in AI-driven security systems, zero-trust architectures, and biometric authentication are reshaping defense strategies.",
+        "date": "2023-11-09T14:05:29.123456Z"
+    },
+    {
+        "id": 50000000,
+        "title": "The Era of Internet of Things (IoT)",
+        "content": "IoT is transforming our daily lives with smart homes, connected devices, and industrial automation. Its impact on healthcare, agriculture, and urban planning is continually expanding.",
+        "date": "2023-11-09T14:10:42.987654Z"
+    }
+]
 
 export async function fetchData() {
     try {
@@ -13,27 +44,16 @@ export async function fetchData() {
             }
         });
 
-        if (response.status >= 200 && response.status < 300) {
-            // Successful request (status codes 2xx)
-            const newPosts = response.data.map(post => ({
-                id: post.id,
-                title: post.title,
-                content: post.content,
-                date: post.date
-            }));
+        // Successful request (status codes 2xx)
+        const newPosts = response.data
+        console.log('New posts:', newPosts);
 
-            // Add new posts to post_data and maintain only the last 10
-            post_data = post_data.concat(newPosts);
-            if (post_data.length > 10) {
-                post_data = post_data.slice(post_data.length - 10);
-            }
-
-            console.log('Last 10 posts:', post_data);
-
-        } else {
-            console.log('Request was not successful. Status:', response.status);
-            console.error('Error message:', response.statusText);
+        // Add new posts to post_data and maintain only the last 10
+        post_data = post_data.concat(newPosts);
+        if (post_data.length > 10) {
+            post_data = post_data.slice(post_data.length - 10);
         }
+        console.log('Last 10 posts:', post_data);
     } catch (error) {
         console.error('Error occurred:', error);
         if (error.response) {
@@ -42,6 +62,7 @@ export async function fetchData() {
         }
     }
 }
+
 fetchData();
 
 
@@ -76,71 +97,6 @@ const contactDetails = {
     'College': 'R.V. College of Engineering',
     'City': 'Bengaluru',
 }
-
-// const post_data = [
-//     {
-//         "id": 1,
-//         "title": "Hello",
-//         "content": "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented, and functional programming.",
-//         "date": "2023-11-09T04:35:31.583009Z"
-//     },
-//     {
-//         "id": 2,
-//         "title": "World",
-//         "content": "JavaScript is a versatile scripting language used for web development. It enables interactive web pages and is an essential part of web applications. JavaScript allows for asynchronous communication and can be used for both client-side and server-side development.",
-//         "date": "2023-11-08T10:20:15.123456Z"
-//     },
-//     {
-//         "id": 3,
-//         "title": "Programming",
-//         "content": "Java is a popular programming language known for its portability and compatibility across platforms. It is commonly used for developing mobile apps, web applications, and enterprise software. Java uses an object-oriented approach and is statically typed.",
-//         "date": "2023-11-07T15:45:00.987654Z"
-//     },
-//     {
-//         "id": 4,
-//         "title": "Data Science",
-//         "content": "R programming language is widely used for data analysis and statistical computing. It offers a variety of statistical techniques and graphical methods. R provides a rich ecosystem for data science and is used by analysts and statisticians.",
-//         "date": "2023-11-06T20:55:42.345678Z"
-//     },
-//     {
-//         "id": 5,
-//         "title": "Artificial Intelligence",
-//         "content": "C++ is a powerful programming language used extensively in the development of system software, games, and applications that require high performance. It provides low-level memory manipulation and is an extension of the C programming language.",
-//         "date": "2023-11-05T08:10:30.876543Z"
-//     },
-//     {
-//         "id": 6,
-//         "title": "Machine Learning",
-//         "content": "Ruby is a dynamic and object-oriented programming language known for its simplicity and productivity. It is used in web development and has a strong community contributing to its frameworks and libraries.",
-//         "date": "2023-11-04T12:25:55.234567Z"
-//     },
-//     {
-//         "id": 7,
-//         "title": "Web Development",
-//         "content": "PHP is a widely-used server-side scripting language suited for web development. It is embedded into HTML and works well with databases. PHP allows developers to create dynamic and interactive web pages.",
-//         "date": "2023-11-03T06:30:12.765432Z"
-//     },
-//     {
-//         "id": 8,
-//         "title": "Frontend Technologies",
-//         "content": "Swift is a powerful and intuitive programming language primarily used for iOS, macOS, watchOS, and tvOS app development. It is known for its safety, speed, and modern features.",
-//         "date": "2023-11-02T17:40:05.678901Z"
-//     },
-//     {
-//         "id": 9,
-//         "title": "Backend Development",
-//         "content": "Go, also known as Golang, is a statically typed, compiled language. It is recognized for its efficiency and concurrency support, making it suitable for backend development and system programming.",
-//         "date": "2023-11-01T09:15:20.543210Z"
-//     },
-//     {
-//         "id": 10,
-//         "title": "Mobile Development",
-//         "content": "Kotlin is a statically typed programming language used for developing modern Android applications. It is concise, safe, interoperable with Java, and widely adopted by Android developers.",
-//         "date": "2023-10-31T14:50:00.112233Z"
-//     }
-// ]
-
-
 
 const jumbotronAnimatedText = {
     'firstSentence': 'I am Sarvagya👋',

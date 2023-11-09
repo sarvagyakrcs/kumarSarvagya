@@ -1,15 +1,13 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 // components
 import NavBar from './components/navBar/navbar';
 import Footer from './components/footer/footer';
-import BlogPostElement from './components/blogPostElement/blogPostElement';
 import Jumbotron from './components/jumbotron/jumbotron';
 // data
-import {socialMediaLinks, contactDetails, jumbotronAnimatedText, post_data} from './data'
+import { socialMediaLinks, contactDetails, jumbotronAnimatedText, post_data } from './data'
 // css
 import './input.css';
 // packages
-import { animate } from 'framer-motion';
 import PersonalBlog from './components/personalBlog/personalBlog';
 
 function App() {
@@ -19,21 +17,21 @@ function App() {
     return (
         <>
             {/* navbar */}
-            <NavBar mode={mode} setMode={setMode}/>
+            <NavBar mode={mode} setMode={setMode} />
 
             {/* jumbotron */}
             <Jumbotron
-                mode={mode} 
+                mode={mode}
                 setMode={setMode}
                 contactDetails={contactDetails}
-                animatedText = {jumbotronAnimatedText}
+                animatedText={jumbotronAnimatedText}
             />
 
             {/* personal-blog */}
             <PersonalBlog
                 posts={post_data}
                 contactDetails={contactDetails}
-                mode={mode} 
+                mode={mode}
                 setMode={setMode}
             />
 
@@ -41,9 +39,16 @@ function App() {
             <Footer
                 links={socialMediaLinks}
                 contactDetails={contactDetails}
-                mode={mode} 
+                mode={mode}
                 setMode={setMode}
             />
+
+            <div>
+                <h1>Your Posts</h1>
+                <h1>{post_data.length} hello</h1>
+            </div>
+
+
         </>
     );
 }

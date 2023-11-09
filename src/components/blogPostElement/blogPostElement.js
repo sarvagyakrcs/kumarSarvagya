@@ -5,7 +5,6 @@ import verificationMark from './images/verified.svg'
 
 const BlogPostElement = (props) => {
     const calculateTimeDifference = (postDate) => {
-        console.log('Post Date:', postDate);
         if (!postDate) {
             return 'Unknown'; // Handle case where date is not provided
         }
