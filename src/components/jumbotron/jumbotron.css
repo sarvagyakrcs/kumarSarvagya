@@ -75,5 +75,17 @@
     z-index: 0;
 }
 
+/* downloadResume Button */
+.downloadResume button{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 
 /* responsivness */

@@ -64,6 +64,11 @@ const Jumbotron = (props) => {
     const textEnter = () => setCursorVariant("text");
     const textLeave = () => setCursorVariant("default");
 
+    const downloadResume = () => {
+        window.open(props.resume_link, '_blank');
+    };
+    
+
     return (
         <>
             <div className='jumbotron' id='home-101'>
@@ -77,15 +82,18 @@ const Jumbotron = (props) => {
                                 font={modeFont}
                             /> <br />
                         </motion.h1>
-                        {/* <motion.h1 className={`${modeFont} `} onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                            Welcome to the Fantastic World of my PORTFOLIO 🚀! <br />
-                        </motion.h1> */}
+
                         <motion.div
                             className="cursor"
                             variants={cursorVariants}
                             animate={cursorVariant}
                         ></motion.div>
                     </div>
+                    <div className="downloadResume">
+                            <motion.button onClick={downloadResume} className={`${modeFont}`} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                                Download Resume <br />
+                            </motion.button>
+                        </div>
                 </div>
                 <div className={`right-bar ${bgColor}`}>
                     <img src={Pic} alt="" />

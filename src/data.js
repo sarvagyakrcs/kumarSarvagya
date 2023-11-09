@@ -72,5 +72,7 @@ const jumbotronAnimatedText = {
     'thirdSentence': 'I am Vengence⚔️'
 }
 
-export { socialMediaLinks, contactDetails, jumbotronAnimatedText };
+const resume_link = 'https://drive.google.com/file/d/1HYzheASXUznseJCWAtDlr77Ibw_GWuVI/view?usp=sharing'
+
+export { socialMediaLinks, contactDetails, jumbotronAnimatedText, resume_link };
 

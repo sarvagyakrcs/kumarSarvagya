@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/navBar/navbar';
 import Footer from './components/footer/footer';
 import Jumbotron from './components/jumbotron/jumbotron';
-import { socialMediaLinks, contactDetails, jumbotronAnimatedText } from './data';
+import { socialMediaLinks, contactDetails, jumbotronAnimatedText, resume_link } from './data';
 import './input.css';
 import PersonalBlog from './components/personalBlog/personalBlog';
 
@@ -56,6 +56,7 @@ function App() {
                     setMode={setMode}
                     contactDetails={contactDetails}
                     animatedText={jumbotronAnimatedText}
+                    resume_link = {resume_link}
                 />
 
                 {/* personal-blog */}
