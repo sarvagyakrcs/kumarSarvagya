@@ -9,6 +9,7 @@ const Jumbotron = (props) => {
     const [Pic, setPic] = useState(invertedPic);
     const [bgColor, setBgColor] = useState('darkModeBg');
     const [modeFont, setModeFont] = useState('darkModeFont');
+    const [modeBorder, setModeBorder] = useState('darkModeBorder');
 
     const [cursorVariant, setCursorVariant] = useState("default");
 
@@ -40,10 +41,12 @@ const Jumbotron = (props) => {
             setPic(invertedPic);
             setBgColor('lightModeBg');
             setModeFont('lightModeFont');
+            setModeBorder('lightModeBorder');
         } else {
             setPic(mypic);
             setBgColor('darkModeBg');
             setModeFont('darkModeFont');
+            setModeBorder('darkModeBorder');
         }
     }, [props.mode]); // Re-run when props.mode changes
 
@@ -89,8 +92,8 @@ const Jumbotron = (props) => {
                             animate={cursorVariant}
                         ></motion.div>
                     </div>
-                    <div className="downloadResume">
-                            <motion.button onClick={downloadResume} className={`${modeFont}`} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                    <div className={`${bgColor} ${modeFont} downloadResume`}>
+                            <motion.button className={`${bgColor} ${modeFont} ${modeBorder}`} onClick={downloadResume} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                                 Download Resume <br />
                             </motion.button>
                         </div>

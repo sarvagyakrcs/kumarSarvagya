@@ -77,9 +77,6 @@
 
 /* downloadResume Button */
 .downloadResume button{
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
     padding: 10px 20px;
     font-size: 20px;
     border-radius: 10px;
@@ -87,5 +84,12 @@
     transition: all 0.3s ease-in-out;
 }
 
+.darkModeBorder{
+    border: 2px solid white;
+}
+
+.lightModeBorder{
+    border: 2px solid black;
+}
 
 /* responsivness */
