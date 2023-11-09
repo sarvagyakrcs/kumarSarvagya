@@ -1,0 +1,74 @@
+.topSpace{
+    padding-top: 5px;
+}
+
+.seperate-bottom{
+    margin-bottom: 10px;
+}
+
+.BlogPostElement{
+    display: flex;
+    justify-content: space-between;
+    width : 598px;
+    height: 198px;
+}
+
+/* left */
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45px;
+}
+
+/* right */
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 553px;
+}
+
+/* topBar */
+.top-bar-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20;
+    background-color: transparent;
+}
+
+.topBar{
+    display: flex;
+    align-items: center;
+    width : 514px;
+    height: 20;
+}
+
+.profile-picture{
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+}
+
+.verificationMark{
+    height: 18px;
+    width: 18px;
+}
+
+/* mainBar */
+.main-content{
+    padding-left: 10px;
+}
+
+.main-content p{
+    text-align: left;
+    width: 514px;
+}
+
+/* bottom bar */
+.bottom-bar {
+    align-self: flex-start; /* Positions the element at the end of the container */
+    margin-top: auto; /* Pushes the element to the bottom */
+    padding: 0 10px;
+}

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Raleway&display=swap');
+
+:root {
+    --font-heading: 'Raleway', sans-serif;
+    --font-text: 'Lato', sans-serif;
+    --text-color: aliceblue; /* Text color variable */
+    --heading-color: aliceblue; /* Heading color variable */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+}
+
+body {
+    background: rgb(30, 30, 30);
+    color: var(--text-color); /* Applying text color variable */
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color); /* Applying heading color variable */
+}
+
+pre,
+span,
+a,
+li,
+p,
+.text-content {
+    font-family: var(--font-text);
+    color: var(--text-color); /* Applying text color variable */
+}
+
+a,
+li {
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color); /* Applying text color variable */
+}

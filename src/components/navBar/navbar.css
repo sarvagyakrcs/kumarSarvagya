@@ -1,0 +1,107 @@
+/* main nav bar */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* lightmode and darkmode fonts */
+.darkMode {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.lightMode {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7) 0%, rgba(34, 255, 255, 0.561) 100%);
+}
+
+.darkModeFont {
+    color: white;
+    font-weight: bold;
+}
+
+.darkModeFont:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.lightModeFont {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.lightModeFont:hover {
+    color: rgb(0, 0, 100);
+    font-weight: bold;
+}
+
+
+/* nav bar logo */
+.nav-image {
+    width: 12%;
+}
+
+.nav-image img {
+    width: 100%;
+    height: auto;
+    margin-left: 5px;
+}
+
+/* nav menu bar */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 58%;
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu ul li {
+    margin: 0 20px;
+}
+
+/* nav search bar */
+.nav-search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.nav-search-bar button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+button {
+    background-color: none;
+    /* Set background to transparent */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.anchor-links {
+    opacity: 0.7;
+    transition: 100ms;
+}
+
+.anchor-links:hover {
+    opacity: 1.4;
+    transform: scale(1.1);
+}
+
+.darkModeButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

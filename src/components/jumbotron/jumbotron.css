@@ -1,0 +1,78 @@
+.seperate{
+    padding: 10px;
+}
+
+.big{
+    font-size: 50px;
+}
+
+.jumbotron{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 95vh;
+    /* background-image: url("../jumbotron/images/myPic.png"); */
+}
+
+/* right-bar */
+.right-bar{
+    background-color: transparent;
+    width: 70%;
+    height: 100%;
+}
+
+.right-bar img{
+    height: 105%;
+    margin-left: 150px;
+    filter: drop-shadow(10px 10px 100px rgb(179, 179, 167) );
+}
+
+/* main-bar */
+.main-bar{
+    width: 30%;
+    height: 100%;
+}
+
+.darkModeBg{
+    background-color: black;
+}
+
+.lightModeBg{
+    background-color: white;
+}
+
+
+/* mode font */
+.darkModeFont{
+    color: white;
+}
+
+.lightModeFont{
+    color: black;
+}
+
+/* main-bar */
+.main-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.cursor{
+    background-color: rgba(255, 255, 255, 0.72);
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* responsivness */
