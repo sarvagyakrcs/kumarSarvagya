@@ -21,10 +21,10 @@ function App() {
                     Authorization: `Token ${accessToken}`
                 }
             });
-    
+
             if (response.ok) {
                 const data = await response.json();
-    
+
                 if (Array.isArray(data)) {
                     const slicedPosts = data.slice(0, 10); // Retrieve the first 10 posts
                     setPosts(slicedPosts); // Update the state with fetched posts
@@ -38,7 +38,7 @@ function App() {
             console.error('Error fetching posts:', error);
         }
     };
-    
+
 
     useEffect(() => {
         fetchPosts(); // Fetch posts when the component mounts
@@ -46,32 +46,34 @@ function App() {
 
     return (
         <>
-            {/* navbar */}
-            <NavBar mode={mode} setMode={setMode} />
+            <div className="home">
+                {/* navbar */}
+                <NavBar mode={mode} setMode={setMode} />
 
-            {/* jumbotron */}
-            <Jumbotron
-                mode={mode}
-                setMode={setMode}
-                contactDetails={contactDetails}
-                animatedText={jumbotronAnimatedText}
-            />
+                {/* jumbotron */}
+                <Jumbotron
+                    mode={mode}
+                    setMode={setMode}
+                    contactDetails={contactDetails}
+                    animatedText={jumbotronAnimatedText}
+                />
 
-            {/* personal-blog */}
-            <PersonalBlog
-                posts={posts} // Pass fetched posts as a prop
-                contactDetails={contactDetails}
-                mode={mode}
-                setMode={setMode}
-            />
+                {/* personal-blog */}
+                <PersonalBlog
+                    posts={posts} // Pass fetched posts as a prop
+                    contactDetails={contactDetails}
+                    mode={mode}
+                    setMode={setMode}
+                />
 
-            {/* footer */}
-            <Footer
-                links={socialMediaLinks}
-                contactDetails={contactDetails}
-                mode={mode}
-                setMode={setMode}
-            />
+                {/* footer */}
+                <Footer
+                    links={socialMediaLinks}
+                    contactDetails={contactDetails}
+                    mode={mode}
+                    setMode={setMode}
+                />
+            </div>
         </>
     );
 }

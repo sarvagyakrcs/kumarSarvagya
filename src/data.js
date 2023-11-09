@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 
 // let post_data = [

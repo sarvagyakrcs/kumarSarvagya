@@ -7,7 +7,6 @@
     align-content: center; /* Center vertically */
 }
 
-
 .grid-item {
     /* Additional styling for each grid item if needed */
     padding: 50px;
@@ -17,5 +16,5 @@
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    margin-top: 25px;
+    padding-top: 55px;
 }

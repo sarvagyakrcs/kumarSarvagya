@@ -66,7 +66,7 @@ const Jumbotron = (props) => {
 
     return (
         <>
-            <div className='jumbotron'>
+            <div className='jumbotron' id='home-101'>
                 <div className={`main-bar ${bgColor}`}>
                     <div className="main-bar-text">
                         <motion.h1 className={`${modeFont} seperate big`} onMouseEnter={textEnter} onMouseLeave={textLeave}>

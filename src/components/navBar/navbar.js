@@ -27,10 +27,22 @@ const NavBar = (props) => {
         }
     }
 
+    const scroll = (destination) => {
+        const personalBlogSection = document.getElementById(destination);
+        if (personalBlogSection) {
+            personalBlogSection.scrollIntoView({
+                behavior: 'smooth',
+                boundary: { top: 15 }
+            });
+        }
+    };
+    
+
+
     return (
         <>
             {/* main nav bar */}
-            <nav className={`nav-bar ${props.mode}`}>
+            <nav id='nav-bar' className={`nav-bar ${props.mode}`}>
                 <div className="nav-image">
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                         <img src={logoMode} alt="" />
@@ -38,12 +50,13 @@ const NavBar = (props) => {
                 </div>
                 <div className="nav-menu">
                     <ul>
-                        <li className="list-items"><a href="index.html" className={`anchor-links ${fontMode}`}>Home</a></li>
-                        <li className="list-items"><a href="index.html" className={`anchor-links ${fontMode}`}>Personal Blog</a></li>
-                        <li className="list-items"><a href="#/" className={`anchor-links ${fontMode}`}>Projects</a></li>
-                        <li className="list-items"><a href="#/" className={`anchor-links ${fontMode}`}>Past Experiences</a></li>
-                        <li className="list-items"><a href="skills.html" className={`anchor-links ${fontMode}`}>Certifications</a></li>
-                        <li className="list-items"><a href="#/" className={`anchor-links ${fontMode}`}>Contact Me</a></li>
+                        <li className="list-items"><button onClick={() => scroll('home-101')} className={`anchor-links ${fontMode}`}>Home</button></li>
+                        <li className="list-items"><button onClick={() => scroll('personal-blog')} className={`anchor-links ${fontMode}`}>Personal Blog</button></li>
+                        <li className="list-items"><button onClick={() => scroll('projects')} className={`anchor-links ${fontMode}`}>Projects</button></li>
+                        <li className="list-items"><button onClick={() => scroll('past-experiences')} className={`anchor-links ${fontMode}`}>Past Experiences</button></li>
+                        <li className="list-items"><button onClick={() => scroll('past-experiences')} className={`anchor-links ${fontMode}`}>Certifications</button></li>
+                        <li className="list-items"><button onClick={() => scroll('contact')} className={`anchor-links ${fontMode}`}>Contact Me</button></li>
+
                     </ul>
                 </div>
                 {/* darkModeButton */}
