@@ -1,4 +1,4 @@
-# Visit the Site :  (https://www.sarvagya.live/)https://www.sarvagya.live/)
+# Visit the Site :  (https://www.sarvagya.live/)
 
 # Project Documentation
 
