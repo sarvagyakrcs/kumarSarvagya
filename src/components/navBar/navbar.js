@@ -4,6 +4,9 @@ import logo from './images/logo.png'
 import invertedLogo from './images/logo-inverted.png'
 import lightMode from './images/lightMode.png'
 import darkMode from './images/darkMode.png'
+import NavMenu from '../NavMenu/navMenu'
+import {menuOptions} from '../../data'
+
 
 
 const NavBar = (props) => {
@@ -63,6 +66,10 @@ const NavBar = (props) => {
                 <div className="darkModeButton">
                     <h3 className={`${fontMode}`}>{props.mode}</h3>
                     <button className={`${fontMode}`} onClick={toggleMode}><img src={modeIcon} alt="" /></button>
+                </div>
+                {/* nav-menu */}
+                <div className="navMenu">
+                        <NavMenu MenuOptions={menuOptions}/>
                 </div>
             </nav>
         </>

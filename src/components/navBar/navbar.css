@@ -113,3 +113,18 @@ button {
     justify-content: center;
 }
 
+/* responsivness */
+@media only screen and (max-width: 480px) {
+    .nav-menu{
+        display: none;
+    }
+
+    .nav-image img{
+        width: 135px;
+    }
+
+    .darkModeButton{
+        padding-left: 30px;
+    }
+}
+

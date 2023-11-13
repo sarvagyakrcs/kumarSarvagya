@@ -72,7 +72,36 @@ const jumbotronAnimatedText = {
     'thirdSentence': 'I am Vengence⚔️'
 }
 
+
+// manuBar Options
+const menuOptions = {
+    student: {
+        icon: '',
+        menuOption: 'Students'
+    },
+    staff: {
+        icon: '',
+        menuOption: 'Staff'
+    },
+    resources: {
+        icon: '',
+        menuOption: 'Resources'
+    },
+    validate: {
+        icon: '',
+        menuOption: 'Validate'
+    },
+    extUserAcAdmin: {
+        icon: '',
+        menuOption: 'Ext User A/C Admin'
+    },
+    admin: {
+        icon: '',
+        menuOption: 'Admin'
+    },
+};
+
 const resume_link = 'https://drive.google.com/file/d/1HYzheASXUznseJCWAtDlr77Ibw_GWuVI/view?usp=sharing'
 
-export { socialMediaLinks, contactDetails, jumbotronAnimatedText, resume_link };
+export { socialMediaLinks, contactDetails, jumbotronAnimatedText, resume_link, menuOptions };
 

@@ -1,0 +1,150 @@
+:root {
+    --primary-color: white;
+    --hover-color: rgba(255, 255, 255, 0.1);
+    --menu-width: 100vw;
+    --menu-font-size: 40px;
+    --menu-padding: 20px;
+    --menu-item-font-size: 20px;
+    --burger-button-margin: 10px;
+}
+
+.mainContainer {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* menu */
+
+.Nav-menu {
+    height: 100vh;
+    max-width: 100vw;
+    width: 100vw;
+    display: flex;
+    max-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.Nav-menu.open {
+    max-height: 100vh; /* Adjust the value based on your content height */
+}
+
+.Nav-menu h1 {
+    font-size: var(--menu-font-size);
+    padding: var(--menu-padding);
+    color: black;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.menu-item h2{
+    color: black;
+}
+
+.menu-item button:hover {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+}
+
+.menu-item img {
+    height: 40px;
+    width: 40px;
+    margin-left: 8px;
+}
+
+.menu-item h2 {
+    font-size: var(--menu-item-font-size);
+}
+
+/* burger button */
+.burgerButton {
+    position: fixed;
+    right: 0;
+    margin-right: var(--burger-button-margin);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.burgerButton h2{
+    font-size: 30px;
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+.burgerButton:hover {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+}
+
+/* exitButton */
+.exitButton img{
+    cursor: pointer;
+}
+
+/* media-queries for responsiveness */
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .Nav-menu {
+        width: 100vw;
+        max-width: 100vw;
+        background-color: var(--primary-color);
+    }
+
+    .burgerButton img{
+        height: 28px;
+        width: 28px;
+    }
+
+    .exitButton img{
+        height: 28px;
+        width: 28px;
+    }
+
+    .burgerButton h2{
+        display: none;
+    }
+}
+
+
+/* tablet */
+@media only screen and (max-width: 1000px) {
+    .Nav-menu {
+        width: 100vw;
+        max-width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        background-color: var(--primary-color);
+    }
+
+    .burgerButton img{
+        height: 34px;
+        width: 34px;
+    }
+
+    .exitButton img{
+        height: 34px;
+        width: 34px;
+    }
+
+    .burgerButton h2{
+        display: none;
+    }
+}
