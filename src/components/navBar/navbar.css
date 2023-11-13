@@ -114,7 +114,7 @@ button {
 }
 
 /* responsivness */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .nav-menu{
         display: none;
     }
@@ -127,4 +127,29 @@ button {
         padding-left: 30px;
     }
 }
+
+@media only screen and (max-width: 1150px) {
+    .nav-menu{
+        display: none;
+    }
+
+    .nav-image img{
+        width: 135px;
+    }
+
+    .darkModeButton{
+        padding-left: 30px;
+    }
+
+    .nav-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .darkModeButton{
+        margin-right: 50px;
+    }
+}
+
+
 

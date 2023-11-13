@@ -96,11 +96,14 @@ const Jumbotron = (props) => {
                             <motion.button className={`${bgColor} ${modeFont} ${modeBorder}`} onClick={downloadResume} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                                 Download Resume <br />
                             </motion.button>
-                        </div>
+                    </div>
                 </div>
                 <div className={`right-bar ${bgColor}`}>
                     <img src={Pic} alt="" />
                 </div>
+            </div>
+            <div className={`mobile-image ${bgColor}`}>
+                    <img src={Pic} alt="" />
             </div>
         </>
     );

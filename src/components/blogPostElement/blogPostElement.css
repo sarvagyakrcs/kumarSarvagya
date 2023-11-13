@@ -11,6 +11,7 @@
     justify-content: space-between;
     width : 598px;
     height: 198px;
+    margin-left: 50px;
 }
 
 /* left */
@@ -72,4 +73,34 @@
     align-self: flex-start; /* Positions the element at the end of the container */
     margin-top: auto; /* Pushes the element to the bottom */
     padding: 0 10px;
+}
+
+
+/* responsivness */
+
+/* Styles for smaller screens */
+
+@media (max-width: 645px) {
+    .BlogPostElement{
+        justify-content: space-evenly;
+        width : 98vw;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    .left{
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    .right{
+        width: 85vw;
+        margin: 0;
+        padding: 0;
+    }
+    .main-content p{
+        width: 85vw;
+        margin: 0;
+        padding: 0;
+    }
 }

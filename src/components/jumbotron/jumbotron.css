@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: space-between;
     height: 95vh;
-    /* background-image: url("../jumbotron/images/myPic.png"); */
+    overflow: hidden;
 }
 
 /* right-bar */
@@ -26,6 +26,10 @@
     height: 105%;
     margin-left: 150px;
     filter: drop-shadow(10px 10px 100px rgb(179, 179, 167) );
+}
+
+.mobile-image{
+    display: none;
 }
 
 /* main-bar */
@@ -93,3 +97,42 @@
 }
 
 /* responsivness */
+@media only screen and (max-width: 500px) {
+    .jumbotron{
+        flex-direction: column;
+        height: 450px;
+    }
+    .right-bar {
+        display: none;
+    }
+    .mobile-image{
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-image img{
+        height: 500px;
+        /* width 100%; */
+    }
+}
+
+@media only screen and (max-width: 1145px) {
+    .jumbotron{
+        flex-direction: column;
+        height: 450px;
+    }
+    .right-bar {
+        display: none;
+    }
+    .mobile-image{
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-image img{
+        height: 500px;
+        /* width 100%; */
+    }
+}

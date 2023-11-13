@@ -34,7 +34,7 @@ const NavMenu = (props) => {
     const burgerButton = (
         <div className="burgerButton" onClick={toggleMenu}>
             <img src={BurgerButton} alt="" />
-            <h2 style={{'color' : 'tomato'}}>Menu</h2>
+            {/* <h2 style={{'color' : 'tomato'}}>Menu</h2> */}
         </div>
     );
 
