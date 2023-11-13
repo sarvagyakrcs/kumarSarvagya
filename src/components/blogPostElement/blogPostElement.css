@@ -87,6 +87,8 @@
         overflow: hidden;
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
+        margin-right: 35px;
     }
     .left{
         display: none;

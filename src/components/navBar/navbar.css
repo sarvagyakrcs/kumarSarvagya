@@ -111,6 +111,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 50px;
+}
+
+.navMenu{
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 /* responsivness */
@@ -135,10 +142,6 @@ button {
 
     .nav-image img{
         width: 135px;
-    }
-
-    .darkModeButton{
-        padding-left: 30px;
     }
 
     .nav-bar{
