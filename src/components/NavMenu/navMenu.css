@@ -108,10 +108,10 @@
         background-color: var(--primary-color);
     }
 
-    .burgerButton img{
+    /* .burgerButton img{
         height: 28px;
         width: 28px;
-    }
+    } */
 
     .exitButton img{
         height: 28px;
@@ -135,8 +135,8 @@
     }
 
     .burgerButton img{
-        height: 34px;
-        width: 34px;
+        height: 30px;
+        width: 30px;
     }
 
     .exitButton img{

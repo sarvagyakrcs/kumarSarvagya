@@ -61,7 +61,7 @@ const socialMediaLinks = {
 const contactDetails = {
     'Name': 'SARVAGYA KUMAR',
     'Email': 'SARVAGYAKRCS@GMAIL.COM',
-    'Branch': 'Computer Science and Engineering (Data Science)',
+    'Branch': 'CSE(Data Science)',
     'College': 'R.V. College of Engineering',
     'City': 'Bengaluru',
 }

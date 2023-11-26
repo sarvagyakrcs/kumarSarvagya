@@ -81,3 +81,28 @@
 .lightModeFontFooter{
     color: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 }
+
+/* responsivness */
+@media only screen and (max-width: 500px) {
+    .footer-conatainer{
+        flex-direction: column;
+        height: fit-content;
+    }
+    .f-mainContent{
+        height: fit-content;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .vl{
+        display: none;
+    }
+    .anchor-links-footer{
+        font-size: 10px;
+    }
+    .contact-info{
+        font-size: 10px;
+    }
+    .f-main-headings{
+        font-size: 15px;
+    }
+}

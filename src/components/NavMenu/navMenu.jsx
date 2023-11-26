@@ -14,6 +14,16 @@ const NavMenu = (props) => {
 
     const menuOptions = props.MenuOptions;
 
+    const scroll = (destination) => {
+        const personalBlogSection = document.getElementById(destination);
+        if (personalBlogSection) {
+            personalBlogSection.scrollIntoView({
+                behavior: 'smooth',
+                boundary: { top: 15 }
+            });
+        }
+    };
+
     const menu = (
         <div className={`Nav-menu ${menuOpen ? 'open' : ''}`}>
             <h1>Menu</h1>
@@ -25,6 +35,7 @@ const NavMenu = (props) => {
                     <button className="menu-item">
                         <h2>{value.menuOption}</h2>
                         <img src={value.icon} alt={value.menuOption} />
+                        onClick={() => scroll('personal-blog')}
                     </button>
                 </div>
             ))}
