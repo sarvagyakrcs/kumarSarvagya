@@ -122,6 +122,20 @@ button {
 
 /* responsivness */
 
+@media only screen and (max-width: 2000px){
+    .navMenu{
+        display: none;
+    }
+
+    .nav-image img{
+        width: 135px;
+    }
+
+    .darkModeButton{
+        padding-left: 30px;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .nav-menu{
         display: none;
