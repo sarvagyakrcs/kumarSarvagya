@@ -121,6 +121,7 @@ button {
 }
 
 /* responsivness */
+
 @media only screen and (max-width: 500px) {
     .nav-menu{
         display: none;
