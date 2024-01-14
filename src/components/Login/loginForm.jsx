@@ -24,7 +24,6 @@ const LoginForm = (props) => {
             const result = await signInWithPopup(auth, googleProvider);
             setUser(result.user);
             localStorage.setItem('userDetails', JSON.stringify(user));
-            console.log(localStorage.getItem('userDetails'));
             localStorage.setItem('isLoggedIn', true);
         } catch (error) {
             console.error('Error signing in with Google:', error);
