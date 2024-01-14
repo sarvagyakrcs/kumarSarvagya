@@ -6,6 +6,7 @@ const LogOut = (props) => {
 
     const logOut = async () => {
         localStorage.removeItem('userDetails');
+        localStorage.removeItem('isLoggedIn');
         localStorage.clear();
         try {
             await signOut(auth);
