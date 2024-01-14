@@ -21,6 +21,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     border: 1px solid white;
+    background-color: black;
 }
 
 .crossButtonLoginPopup button {
@@ -28,43 +29,49 @@
     top: 0;
     right: 0;
     margin: '10px';
-    z-index: 9998; 
+    z-index: 9998;
 }
 
 .verticalLineLoginPopup {
-    height: 100%; /* Adjust the height as needed */
-    width: 1px; /* Width of the vertical line */
-    background-color: #000; /* Color of the line */
+    height: 100%;
+    /* Adjust the height as needed */
+    width: 1px;
+    /* Width of the vertical line */
+    background-color: #000;
+    /* Color of the line */
     z-index: 9999;
 }
 
-.leftBoxLoginPopup{
+.leftBoxLoginPopup {
     height: 100%;
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color: black;
 }
 
-.leftBoxLoginPopup img{
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(10px);
+.leftBoxLoginPopup img {
+    height: 120%;
+    transform: scaleX(-1);
+    filter: drop-shadow(10px 10px 50px rgb(179, 179, 167));
+    z-index: 2000;
+    /* object-fit: contain; */
 }
 
-.rightBoxLoginPopup{
+
+.rightBoxLoginPopup {
     height: 100%;
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, rgb(6,6,6), rgb(7, 12,24));
+    background-color: black;
     flex-direction: column;
 
 }
 
-.rightBoxLoginPopup button{
+.rightBoxLoginPopup button {
     height: 50px;
     width: 200px;
     background-color: transparent;
@@ -76,6 +83,32 @@
     cursor: pointer;
 }
 
-.mainLogin{
-    margin-top: 50px;
+
+
+@media only screen and (max-width: 900px) {
+    .loginPopup-box{
+        flex-direction: column;
+    }
+    .rightBoxLoginPopup h1{
+        display: none;
+    }
+    .login-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mainLogin{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin-right: 100px; */
+    }
+    .leftBoxLoginPopup{
+        height: 60%;
+        width: 100%;
+    }
+    .rightBoxLoginPopup{
+        height: 40%;
+        width: 100%;
+    }
 }
