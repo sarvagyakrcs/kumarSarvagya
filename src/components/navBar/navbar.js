@@ -6,6 +6,8 @@ import lightMode from './images/lightMode.png'
 import darkMode from './images/darkMode.png'
 import NavMenu from '../NavMenu/navMenu'
 import {menuOptions} from '../../data'
+import LogOut from '../Login/logOut'
+import LoginForm from '../Login/loginForm'
 
 
 
@@ -13,6 +15,8 @@ const NavBar = (props) => {
 
     const [fontMode, setFontMode] = useState('darkModeFont')
     const [logoMode, setLogoMode] = useState(logo)
+
+    const userDetails = JSON.parse(localStorage.getItem('userDetails')) || ''
 
     const [modeIcon, setModeIcon] = useState(darkMode)
     const toggleMode = () => {
@@ -40,6 +44,21 @@ const NavBar = (props) => {
         }
     };
     
+    const userProfileDropDownMenu = (
+        <div className="userProfileDropDownMenu">
+            <LogOut setIsLoggedin={props.setIsLoggedin} />
+        </div>
+    );
+
+    const [userProfileDowpDown, setUserProfileDropDown] = useState(false)
+    const userProfile = (
+        <>
+            <div className="userProfile">
+                <button onClick={() => setUserProfileDropDown(true)}><img src={userDetails['photoURL']} alt="" /></button>
+            </div>
+            {userProfileDowpDown ? userProfileDropDownMenu : null}
+        </>
+    );
 
 
     return (
@@ -59,13 +78,13 @@ const NavBar = (props) => {
                         <li className="list-items"><button onClick={() => scroll('past-experiences')} className={`anchor-links ${fontMode}`}>Past Experiences</button></li>
                         <li className="list-items"><button onClick={() => scroll('past-experiences')} className={`anchor-links ${fontMode}`}>Certifications</button></li>
                         <li className="list-items"><button onClick={() => scroll('contact')} className={`anchor-links ${fontMode}`}>Contact Me</button></li>
-
                     </ul>
                 </div>
                 {/* darkModeButton */}
                 <div className="darkModeButton">
                     <h3 className={`${fontMode}`}>{props.mode}</h3>
                     <button className={`${fontMode}`} onClick={toggleMode}><img src={modeIcon} alt="" /></button>
+                    {props.isLoggedin ? userProfile : <LoginForm setIsLoggedin={props.setIsLoggedin} />}
                 </div>
                 {/* nav-menu */}
                 <div className="navMenu">

@@ -1,0 +1,81 @@
+.mainLoginPopup {
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.loginPopup-box {
+    height: 60vh;
+    width: 70vw;
+    /* background-color: tomato; */
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid white;
+}
+
+.crossButtonLoginPopup button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: '10px';
+    z-index: 9998; 
+}
+
+.verticalLineLoginPopup {
+    height: 100%; /* Adjust the height as needed */
+    width: 1px; /* Width of the vertical line */
+    background-color: #000; /* Color of the line */
+    z-index: 9999;
+}
+
+.leftBoxLoginPopup{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.leftBoxLoginPopup img{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.rightBoxLoginPopup{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgb(6,6,6), rgb(7, 12,24));
+    flex-direction: column;
+
+}
+
+.rightBoxLoginPopup button{
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.mainLogin{
+    margin-top: 50px;
+}

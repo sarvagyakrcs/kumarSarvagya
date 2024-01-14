@@ -2,23 +2,26 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/navBar/navbar';
 import Footer from './components/footer/footer';
 import Jumbotron from './components/jumbotron/jumbotron';
+import PersonalBlog from './components/personalBlog/personalBlog';
 import { socialMediaLinks, contactDetails, jumbotronAnimatedText, resume_link } from './data';
 import './input.css';
-import PersonalBlog from './components/personalBlog/personalBlog';
+import { useNavigate } from 'react-router-dom';
+import LoginPopup from './components/LoginPopup/login';
 
 function App() {
     const [mode, setMode] = useState('darkMode');
-    const [posts, setPosts] = useState([]); // State to store the fetched posts
+    const [posts, setPosts] = useState([]);
+    const [loginPopup, setLoginPopup] = useState(false);
+    const [isLoggedin, setIsLoggedin] = useState(false);
 
-    const apiUrl = 'https://sarvagyakumarcd22.pythonanywhere.com/posts';
-    const accessToken = '987677ba11d78e59ebc24dfe48b256016d4ceb9c';
+    const API_URL = 'https://sarvagyakumarcd22.pythonanywhere.com/posts';
+    const ACCESS_TOKEN = '987677ba11d78e59ebc24dfe48b256016d4ceb9c';
 
-    // Function to fetch the posts
     const fetchPosts = async () => {
         try {
-            const response = await fetch(apiUrl, {
+            const response = await fetch(API_URL, {
                 headers: {
-                    Authorization: `Token ${accessToken}`
+                    Authorization: `Token ${ACCESS_TOKEN}`
                 }
             });
 
@@ -26,8 +29,8 @@ function App() {
                 const data = await response.json();
 
                 if (Array.isArray(data)) {
-                    const slicedPosts = data.slice(0, 10); // Retrieve the first 10 posts
-                    setPosts(slicedPosts); // Update the state with fetched posts
+                    const slicedPosts = data.slice(0, 10);
+                    setPosts(slicedPosts);
                 } else {
                     console.error('Response data is not an array:', data);
                 }
@@ -39,44 +42,56 @@ function App() {
         }
     };
 
-
     useEffect(() => {
-        fetchPosts(); // Fetch posts when the component mounts
-    }, []); // Empty dependency array means it will run once when the component mounts
+        fetchPosts();
 
-    return (
-        <>
-            <div className="home">
-                {/* navbar */}
-                <NavBar mode={mode} setMode={setMode} />
+        const redirectTimeout = setTimeout(() => {
+            if (!isLoggedin) {
+                setLoginPopup(true);
+            }
+            else{
+                setLoginPopup(false);
+            }
+        }, 3000);
 
-                {/* jumbotron */}
-                <Jumbotron
-                    mode={mode}
-                    setMode={setMode}
-                    contactDetails={contactDetails}
-                    animatedText={jumbotronAnimatedText}
-                    resume_link = {resume_link}
-                />
+        // Clear the timeout to prevent redirection if the component unmounts
+        return () => clearTimeout(redirectTimeout);
+    }, [loginPopup, isLoggedin]);
 
-                {/* personal-blog */}
-                <PersonalBlog
-                    posts={posts} // Pass fetched posts as a prop
-                    contactDetails={contactDetails}
-                    mode={mode}
-                    setMode={setMode}
-                />
+    const mainApp = (
+        <div className="home">
+            {/* navbar */}
+            <NavBar mode={mode} setIsLoggedin={setIsLoggedin} isLoggedin={isLoggedin}/>
+            {/* jumbotron */}
+            <Jumbotron
+                mode={mode}
+                setMode={setMode}
+                contactDetails={contactDetails}
+                animatedText={jumbotronAnimatedText}
+                resume_link={resume_link}
+            />
 
-                {/* footer */}
-                <Footer
-                    links={socialMediaLinks}
-                    contactDetails={contactDetails}
-                    mode={mode}
-                    setMode={setMode}
-                />
-            </div>
-        </>
+            {loginPopup ? <LoginPopup setIsLoggedin={setIsLoggedin} setLoginPopup={setLoginPopup} /> : null}
+
+            {/* personal-blog */}
+            <PersonalBlog
+                posts={posts}
+                contactDetails={contactDetails}
+                mode={mode}
+                setMode={setMode}
+            />
+
+            {/* footer */}
+            <Footer
+                links={socialMediaLinks}
+                contactDetails={contactDetails}
+                mode={mode}
+                setMode={setMode}
+            />
+        </div>
     );
+
+    return mainApp; // Removed unnecessary parentheses
 }
 
 export default App;
