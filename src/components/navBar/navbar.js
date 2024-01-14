@@ -50,6 +50,8 @@ const NavBar = (props) => {
         </div>
     );
 
+    const isLoggedin = localStorage.getItem('isLoggedin') || false
+
     const [userProfileDowpDown, setUserProfileDropDown] = useState(false)
     const userProfile = (
         <>
@@ -84,7 +86,7 @@ const NavBar = (props) => {
                 <div className="darkModeButton">
                     <h3 className={`${fontMode}`}>{props.mode}</h3>
                     <button className={`${fontMode}`} onClick={toggleMode}><img src={modeIcon} alt="" /></button>
-                    {props.isLoggedin ? userProfile : <LoginForm setIsLoggedin={props.setIsLoggedin} />}
+                    {isLoggedin ? userProfile : <LoginForm setIsLoggedin={props.setIsLoggedin} />}
                 </div>
                 {/* nav-menu */}
                 <div className="navMenu">

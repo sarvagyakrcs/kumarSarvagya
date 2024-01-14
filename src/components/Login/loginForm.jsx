@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, googleProvider } from '../config/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
+import LogOut from './logOut';
 
 const LoginForm = (props) => {
     const navigate = useNavigate();
@@ -24,6 +25,7 @@ const LoginForm = (props) => {
             const user = result.user;
             props.setIsLoggedin(true);
             localStorage.setItem('userDetails', JSON.stringify(user));
+            localStorage.setItem('isLoggedIn', true);
         } catch (error) {
             console.error('Error signing in with Google:', error);
         }
@@ -39,7 +41,7 @@ const LoginForm = (props) => {
                 {user ? (
                     // User is logged in, display user details and log out button
                     <>
-                        <div className=""></div>
+                        <LogOut />
                         {/* {props.setLoginPopup(false)} */}
                     </>
                 ) : (

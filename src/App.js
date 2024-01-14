@@ -12,7 +12,7 @@ function App() {
     const [mode, setMode] = useState('darkMode');
     const [posts, setPosts] = useState([]);
     const [loginPopup, setLoginPopup] = useState(false);
-    const [isLoggedin, setIsLoggedin] = useState(false);
+    const [isLoggedin, setIsLoggedin] = useState(localStorage.getItem('isLoggedin') || false);
 
     const API_URL = 'https://sarvagyakumarcd22.pythonanywhere.com/posts';
     const ACCESS_TOKEN = '987677ba11d78e59ebc24dfe48b256016d4ceb9c';
