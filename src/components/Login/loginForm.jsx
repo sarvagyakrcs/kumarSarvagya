@@ -39,7 +39,7 @@ const LoginForm = (props) => {
                 {user ? (
                     // User is logged in, display user details and log out button
                     <>
-                        Login Sucessfull
+                        <div className=""></div>
                         {/* {props.setLoginPopup(false)} */}
                     </>
                 ) : (
