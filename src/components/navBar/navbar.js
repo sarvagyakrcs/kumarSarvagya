@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import './navbar.css'
 import logo from './images/logo.png'
 import invertedLogo from './images/logo-inverted.png'
@@ -12,13 +12,18 @@ import LoginForm from '../Login/loginForm'
 
 
 const NavBar = (props) => {
+    const [fontMode, setFontMode] = useState('darkModeFont');
+    const [logoMode, setLogoMode] = useState(logo);
+    const [userDetails, setUserDetails] = useState({});
+    const [modeIcon, setModeIcon] = useState(darkMode);
+    const [userProfileDropDown, setUserProfileDropDown] = useState(false);
+    const [isLoggedin, setIsLoggedin] = useState(localStorage.getItem('isLoggedin') === 'true' ? true : false);
+    useEffect(() => {
+        if (localStorage.getItem('isLoggedin') === 'true') {
+            setUserDetails(JSON.parse(localStorage.getItem('userDetails')));
+        }
+    }, []);
 
-    const [fontMode, setFontMode] = useState('darkModeFont')
-    const [logoMode, setLogoMode] = useState(logo)
-
-    const userDetails = JSON.parse(localStorage.getItem('userDetails')) || ''
-
-    const [modeIcon, setModeIcon] = useState(darkMode)
     const toggleMode = () => {
         if (modeIcon === lightMode) {
             setModeIcon(darkMode);
@@ -43,25 +48,21 @@ const NavBar = (props) => {
             });
         }
     };
-    
+
     const userProfileDropDownMenu = (
         <div className="userProfileDropDownMenu">
             <LogOut setIsLoggedin={props.setIsLoggedin} />
         </div>
     );
 
-    const isLoggedin = localStorage.getItem('isLoggedin') || false
-
-    const [userProfileDowpDown, setUserProfileDropDown] = useState(false)
     const userProfile = (
-        <>
-            <div className="userProfile">
-                <button onClick={() => setUserProfileDropDown(true)}><img src={userDetails['photoURL']} alt="" /></button>
-            </div>
-            {userProfileDowpDown ? userProfileDropDownMenu : null}
-        </>
+        <div className="userProfile">
+            <button onClick={() => setUserProfileDropDown(true)}>
+                <img src={userDetails['photoURL']} alt="" />
+            </button>
+            {userProfileDropDown && userProfileDropDownMenu}
+        </div>
     );
-
 
     return (
         <>

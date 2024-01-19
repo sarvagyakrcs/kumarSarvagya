@@ -10,7 +10,6 @@ const LogOut = (props) => {
         localStorage.clear();
         try {
             await signOut(auth);
-            props.setIsLoggedin(false);
         } catch (error) {
             console.error('Error logging out:', error);
         }
